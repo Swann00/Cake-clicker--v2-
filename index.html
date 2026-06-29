@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake Clicker 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="event-layer" id="eventLayer"></div>
+<div class="notifications" id="notifications"></div>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🎂</span>
+      <span class="brand-name">Cake Clicker</span>
+    </div>
+    <div class="stats">
+      <div class="stat money" id="moneyDisplay">0$</div>
+      <div class="stat cps">+<span id="cpsDisplay">0</span>$/s</div>
+    </div>
+    <div class="controls">
+      <button id="musicToggle" class="icon-btn" title="Musique">🔊</button>
+      <button id="musicTrackToggle" class="icon-btn" title="Style de musique">🎼</button>
+      <button id="sfxToggle" class="icon-btn" title="Sons">🔔</button>
+      <button id="resetBtn" class="icon-btn" title="Réinitialiser cet emplacement">♻️</button>
+    </div>
+  </header>
+
+  <div class="slots-bar" id="slotsBar">
+    <span class="slots-label">💾 Sauvegardes</span>
+    <button class="slot-btn" data-slot="1">
+      <span class="slot-title">Emplacement 1</span>
+      <span class="slot-money">Vide</span>
+    </button>
+    <button class="slot-btn" data-slot="2">
+      <span class="slot-title">Emplacement 2</span>
+      <span class="slot-money">Vide</span>
+    </button>
+    <button class="slot-btn" data-slot="3">
+      <span class="slot-title">Emplacement 3</span>
+      <span class="slot-money">Vide</span>
+    </button>
+    <button class="slot-btn" data-slot="4">
+      <span class="slot-title">Emplacement 4</span>
+      <span class="slot-money">Vide</span>
+    </button>
+    <button class="slot-btn" data-slot="5">
+      <span class="slot-title">Emplacement 5</span>
+      <span class="slot-money">Vide</span>
+    </button>
+  </div>
+
+  <main class="layout">
+
+    <section class="cake-panel">
+      <div class="cake-stage">
+        <div class="cooldown-ring" id="cooldownRing"></div>
+        <button id="cakeBtn" class="cake-button" aria-label="Cliquer sur le gâteau">
+          <div class="cake skin-moisi" id="cakeVisual">
+            <div class="cake-plate"></div>
+            <div class="cake-layer-bottom"></div>
+            <div class="cake-layer-top"></div>
+            <div class="cake-frosting"></div>
+            <div class="cake-drip d1"></div>
+            <div class="cake-drip d2"></div>
+            <div class="cake-drip d3"></div>
+            <div class="cake-cherry"></div>
+            <div class="cake-sparkle s1"></div>
+            <div class="cake-sparkle s2"></div>
+          </div>
+        </button>
+        <div class="particles" id="particles"></div>
+      </div>
+      <p class="click-power">Gain par clic : <strong id="clickPowerDisplay">1$</strong></p>
+      <p class="skin-name" id="currentSkinName">Gâteau moisi</p>
+    </section>
+
+    <section class="shop-panel">
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="buildings">🏠 Bâtiments</button>
+        <button class="tab-btn" data-tab="upgrades">⭐ Améliorations</button>
+        <button class="tab-btn" data-tab="skins">🎂 Gâteaux</button>
+        <button class="tab-btn" data-tab="rebirth">🔄 Rebirth</button>
+      </nav>
+      <div class="tab-content" id="buildingsTab">
+        <div class="amount-bar">
+          <span class="amount-label">Acheter :</span>
+          <button class="amount-btn active" data-amount="1">x1</button>
+          <button class="amount-btn" data-amount="10">x10</button>
+          <button class="amount-btn" data-amount="100">x100</button>
+          <button class="amount-btn" data-amount="max">Max</button>
+        </div>
+        <div class="cards-list" id="buildingsList"></div>
+      </div>
+      <div class="tab-content hidden" id="upgradesTab"></div>
+      <div class="tab-content hidden" id="skinsTab"></div>
+      <div class="tab-content hidden" id="rebirthTab">
+        <div class="rebirth-summary" id="rebirthSummary"></div>
+        <div class="rebirth-chain" id="rebirthChain"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
